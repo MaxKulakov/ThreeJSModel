@@ -1,8 +1,3 @@
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
-// <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js"></script>
-
-console.log('hello');
-
 let scene, camera, render
 var mouseX = 0, mouseY = 0;
 var windowHalfX = window.innerWidth / 2;
@@ -47,8 +42,6 @@ function init() {
     renderer = new THREE.WebGLRenderer({canvas, antialias: true})
     renderer.setSize(window.innerWidth, window.innerHeight)
 
-//controls = new THREE.OrbitControls(camera, renderer.domElement);
-
     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     document.addEventListener( 'touchstart', onDocumentTouchStart, false );
     document.addEventListener( 'touchmove', onDocumentTouchMove, false );
@@ -69,22 +62,19 @@ function init() {
     })
 }
 
-//=======================добавил===========================
 
-    function onWindowResize() {
-        windowHalfX = window.innerWidth / 2;
-        windowHalfY = window.innerHeight / 2;
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
-    }
+function onWindowResize() {
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
 
-//
-
-    function onDocumentMouseMove( event ) {
-        mouseX = event.clientX - windowHalfX;
-        mouseY = event.clientY - windowHalfY;
-    }
+function onDocumentMouseMove( event ) {
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+}
 
     function onDocumentTouchStart( event ) {
         if ( event.touches.length === 1 ) {
