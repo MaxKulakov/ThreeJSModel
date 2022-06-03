@@ -92,7 +92,7 @@ var mouseDownBool = false;
 function animate() {
 
   camera.position.x += ( mouseX - camera.position.x ) * .0005;
-  if (camera.position.y > 100) {
+  if (camera.position.y > 80) {
     camera.position.y += ( -mouseY - camera.position.y ) * .0005;
   } else {
     // sleep(2000);
@@ -103,24 +103,21 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-book_flat_button.onclick = function() {
+
+let book_flat_button = document.querySelector('.book_flat_button')
+book_flat_button.addEventListener('click', function() {
   camera.position.x = -40;
   camera.position.y = 100;
   camera.position.z = -320;
-};
+})
 
-go_to_store_button.onclick = function() {
+
+let go_to_store_button = document.querySelector('.go_to_store_button')
+go_to_store_button.addEventListener('click', function() {
   camera.position.x = 20;
-  camera.position.y = 100;
+  camera.position.y = 120;
   camera.position.z = 0;
-};
-
-// var button1 = document.querySelector("book-flat-button");
-// button1.addEventListener("click", function() {
-//   console.log("Button clicked.");
-// });
-
-
+})
 
 
 
